@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Custom glow accents based on the High Density palette */
+  --color-neon-blue: #22d3ee;
+  --color-neon-cyan: #22d3ee;
+  --color-neon-purple: #c084fc;
+  --color-neon-pink: #f472b6;
+  --color-dark-bg: #030014;
+  --color-glass-card: rgba(255, 255, 255, 0.03);
+
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 8s ease-in-out infinite;
+  --animate-float-delayed: float-delayed 10s ease-in-out infinite;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #030014;
+    color: #e2e8f0;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+    background-color: #030014;
+  }
+
+  /* Thin high-density scrollbars */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    border: none;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(34, 211, 238, 0.4);
+  }
+}
+
+/* Custom keyframes & utilities */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1deg);
+  }
+}
+
+@keyframes float-delayed {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(14px) rotate(-1.5deg);
+  }
+}
+
+.float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.float-slower {
+  animation: float-delayed 11s ease-in-out infinite;
+}
+
+/* Glassmorphism Classes precisely mapped block-by-block from High Density */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+}
+
+/* High Density Glowing elements */
+.neon-text-cyan {
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
+  color: #22d3ee;
+}
+
+.neon-border-cyan {
+  border-color: rgba(34, 211, 238, 0.3);
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.1);
+}
+
+.timeline-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22d3ee;
+  box-shadow: 0 0 6px #22d3ee;
+}
+
+/* Standard glass-cards matching High Density grid cards spacing */
+.glass-card-blue {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(34, 211, 238, 0.12);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-blue:hover {
+  border-color: rgba(34, 211, 238, 0.45);
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.glass-card-purple {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(192, 132, 252, 0.12);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-purple:hover {
+  border-color: rgba(192, 132, 252, 0.45);
+  box-shadow: 0 0 15px rgba(192, 132, 252, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Hologram text & neon glow */
+.text-glow-blue {
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.35);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 8px rgba(192, 132, 252, 0.35);
+}
+
+.cyber-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+}
+
+.neon-border-blue {
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.1);
+}
+
+.neon-border-purple {
+  box-shadow: 0 0 10px rgba(192, 132, 252, 0.1);
+}
+
+/* Thin high density skill indicators */
+.skill-bar-bg {
+  background: rgba(255, 255, 255, 0.05);
+  height: 4px;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+}
