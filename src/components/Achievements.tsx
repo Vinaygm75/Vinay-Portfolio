@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { TrendingUp, BarChart3, GraduationCap, Award, Percent } from "lucide-react";
 import { ACHIEVEMENTS } from "../data";
+import { motion } from "motion/react";
 
 interface CounterProps {
   target: number;
@@ -54,7 +55,7 @@ export default function Achievements() {
   };
 
   return (
-    <section id="achievements" className="py-16 bg-transparent relative border-b border-white/5">
+    <section id="achievements" className="py-16 bg-transparent relative overflow-hidden">
       {/* Dynamic blurred layout meshes */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-purple-600/5 rounded-full blur-[130px] pointer-events-none" />
 
@@ -69,7 +70,13 @@ export default function Achievements() {
           <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-100 tracking-tight">
             Key Career <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Highlights</span>
           </h2>
-          <div className="h-[2px] w-10 bg-cyan-400/80 mx-auto mt-2 rounded-full" />
+          <motion.div
+            initial={{ width: "16px", opacity: 0.4 }}
+            whileInView={{ width: "80px", opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="h-[2.5px] bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mt-2 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.5)]"
+          />
         </div>
 
         {/* Bento-Style Metrics Grid */}
@@ -93,13 +100,9 @@ export default function Achievements() {
                     <div className="p-1.5 w-8 h-8 rounded-lg bg-white/5 border border-white/5 flex items-center justify-center">
                       {getIcon(ach.label)}
                     </div>
-                    {hoveredIndex === idx ? (
+                    {hoveredIndex === idx && (
                       <span className="font-mono text-[9px] text-cyan-400 animate-pulse font-bold uppercase">
                         [ Active hover ]
-                      </span>
-                    ) : (
-                      <span className="font-mono text-[9px] text-slate-600 uppercase">
-                        // Metric
                       </span>
                     )}
                   </div>

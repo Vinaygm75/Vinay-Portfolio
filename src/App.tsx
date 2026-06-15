@@ -14,6 +14,8 @@ import Certifications from "./components/Certifications";
 import Achievements from "./components/Achievements";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import AnimatedBackground from "./components/AnimatedBackground";
+import { motion } from "motion/react";
 
 export default function App() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -65,17 +67,10 @@ export default function App() {
   }, []);
 
   return (
-    <div id="app-root-container" className="min-h-screen bg-[#030014] text-slate-100 flex flex-col justify-between selection:bg-cyan-500/30 selection:text-cyan-300 relative">
+    <div id="app-root-container" className="min-h-screen bg-[#030014] text-slate-100 flex flex-col justify-between selection:bg-cyan-500/30 selection:text-cyan-300 relative overflow-x-hidden">
       
       {/* Background ambient stars / matrix effect */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        {/* Subtle cyan/purple radial lights */}
-        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#082f49]/15 rounded-full blur-[160px]" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-[#1e1b4b]/15 rounded-full blur-[160px]" />
-        
-        {/* Interactive digital overlay grids */}
-        <div className="absolute inset-0 cyber-grid opacity-100" />
-      </div>
+      <AnimatedBackground />
 
       {/* Main sticky top header menu navigation */}
       <Header activeSection={activeSection} />

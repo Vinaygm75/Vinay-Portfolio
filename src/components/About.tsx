@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Linkedin, Github, Mail, MapPin, Briefcase, ChevronRight, Compass, ShieldCheck } from "lucide-react";
 import { PERSONAL_INFO, STATISTICS, FOCUS_AREAS } from "../data";
+import { motion } from "motion/react";
 
 export default function About() {
   const [photoError, setPhotoError] = useState(false);
@@ -30,7 +31,7 @@ export default function About() {
   const photoUrl = PERSONAL_INFO.profilePhoto;
 
   return (
-    <section id="about" className="py-20 bg-transparent relative border-b border-white/5 overflow-hidden">
+    <section id="about" className="py-20 bg-transparent relative overflow-hidden">
       {/* Background glow effects */}
       <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-purple-900/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-cyan-900/10 rounded-full blur-[120px] pointer-events-none" />
@@ -38,10 +39,17 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header matching image exactly */}
-        <div className="mb-10 text-left">
+        <div className="mb-10 text-left space-y-2">
           <h2 className="text-4xl font-display font-bold text-white tracking-tight">
             About
           </h2>
+          <motion.div
+            initial={{ width: "16px", opacity: 0.4 }}
+            whileInView={{ width: "80px", opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="h-[2.5px] bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.5)]"
+          />
           <p className="text-slate-400 text-sm mt-1 pb-1">
             Professional snapshot of data, insights, and innovation.
           </p>

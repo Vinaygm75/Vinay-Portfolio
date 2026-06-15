@@ -7,7 +7,7 @@ export default function Experience() {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <section id="experience" className="py-16 bg-transparent relative border-b border-white/5">
+    <section id="experience" className="py-16 bg-transparent relative overflow-hidden">
       {/* Background soft lighting */}
       <div className="absolute top-1/4 right-0 w-80 h-80 bg-purple-500/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
@@ -23,7 +23,13 @@ export default function Experience() {
           <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-100 tracking-tight">
             Experience & <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Training</span>
           </h2>
-          <div className="h-[2px] w-10 bg-cyan-400/80 mx-auto md:mx-0 mt-2 rounded-full" />
+          <motion.div
+            initial={{ width: "16px", opacity: 0.4 }}
+            whileInView={{ width: "80px", opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="h-[2.5px] bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto md:mx-0 mt-2 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.5)]"
+          />
         </div>
 
         {/* Premium Vertical Timeline */}

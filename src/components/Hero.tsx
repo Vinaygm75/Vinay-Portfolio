@@ -23,7 +23,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-[92vh] sm:min-h-screen pt-20 pb-10 flex items-center overflow-hidden bg-transparent border-b border-white/5"
+      className="relative min-h-[92vh] sm:min-h-screen pt-20 pb-10 flex items-center overflow-hidden bg-transparent"
     >
       {/* Absolute Radial Glow elements */}
       <div className="absolute top-1/4 left-1/10 w-80 h-80 bg-cyan-500/10 rounded-full blur-[100px] pointer-events-none" />

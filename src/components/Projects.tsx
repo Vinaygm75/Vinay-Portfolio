@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { FolderGit2, Calendar, FileDown, ExternalLink, SlidersHorizontal, Eye, X, BarChart3, TrendingUp, Search, Info } from "lucide-react";
 import { PROJECTS } from "../data";
 import { ProjectItem } from "../types";
+import { motion } from "motion/react";
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
+
+  // Lock body scrolling when project detail modal is open
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [selectedProject]);
   
   // States of simulated interactive dashboard for Swiggy & retail sales
   const [swiggyCuisine, setSwiggyCuisine] = useState<string>("All");
@@ -75,7 +89,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-16 bg-transparent relative border-b border-white/5">
+    <section id="projects" className="py-16 bg-transparent relative overflow-hidden">
       {/* Visual glowing clouds */}
       <div className="absolute top-1/10 left-1/12 w-[500px] h-32 bg-cyan-500/5 blur-[120px] rounded-full pointer-events-none" />
       <div className="absolute bottom-1/10 right-1/12 w-[500px] h-32 bg-purple-500/5 blur-[120px] rounded-full pointer-events-none" />
@@ -94,7 +108,13 @@ export default function Projects() {
           <p className="text-slate-400 text-xs max-w-lg mx-auto font-light mt-1 text-center">
             Click on any dashboard to launch an interactive live emulator, read metrics summary, or retrieve official PDF sheets.
           </p>
-          <div className="h-[2px] w-10 bg-cyan-400/80 mx-auto mt-2 rounded-full" />
+          <motion.div
+            initial={{ width: "16px", opacity: 0.4 }}
+            whileInView={{ width: "80px", opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="h-[2.5px] bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mt-2 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.5)]"
+          />
         </div>
 
         {/* 2x2 Clean Dashboard Layout Grid representing real projects */}
@@ -181,8 +201,8 @@ export default function Projects() {
         </div>
 
         {/* Live Dashboard Preview Modal */}
-        {selectedProject && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#020617]/90 backdrop-blur-md">
+        {selectedProject && createPortal(
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-[#020617]/95 backdrop-blur-md">
             
             <div className="w-full max-w-4xl max-h-[90vh] glass-panel bg-[#020617] border border-cyan-500/30 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(34,211,238,0.15)] flex flex-col">
               
@@ -1172,7 +1192,8 @@ export default function Projects() {
 
             </div>
 
-          </div>
+          </div>,
+          document.body
         )}
 
       </div>

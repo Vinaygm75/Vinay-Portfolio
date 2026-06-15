@@ -62,17 +62,17 @@ export default function Header({ activeSection }: HeaderProps) {
             onClick={() => handleScrollTo("hero")}
             className="flex items-center space-x-2.5 cursor-pointer group"
           >
-            <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-gradient-to-tr from-cyan-500 to-purple-500 p-[1px] transition-transform duration-300 group-hover:scale-105">
+            <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-white/20 p-[1px] transition-transform duration-300 group-hover:scale-105">
               <div className="flex items-center justify-center w-full h-full bg-[#020617] rounded-[7px]">
-                <Database className="w-4 h-4 text-cyan-400 group-hover:text-purple-400 transition-colors duration-300" />
+                <Database className="w-4 h-4 text-white transition-colors duration-300" />
               </div>
-              <div className="absolute inset-0 bg-cyan-400/25 blur-md rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute inset-0 bg-white/10 blur-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             </div>
             <div>
-              <span className="font-display font-bold text-sm tracking-wider text-slate-100 group-hover:text-cyan-400 transition-colors">
-                GM <span className="text-cyan-400 group-hover:text-purple-400">VINAY</span>
+              <span className="font-display font-bold text-sm tracking-wider text-white transition-colors">
+                <span>Vinay</span>
               </span>
-              <span className="hidden sm:inline-block ml-1.5 text-[9px] font-mono uppercase tracking-[0.25em] text-cyan-400/80">
+              <span className="hidden sm:inline-block ml-1.5 text-[9px] font-mono uppercase tracking-[0.25em] text-white/60">
                 // Analytics
               </span>
             </div>

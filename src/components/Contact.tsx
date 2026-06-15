@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Mail, Linkedin, Github, MapPin, Send, CheckCircle2, FileDown, Copy, Check, MessageSquare } from "lucide-react";
 import { PERSONAL_INFO } from "../data";
+import { motion } from "motion/react";
 
 interface SavedInquiry {
   name: string;
@@ -44,7 +45,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 bg-transparent relative border-b border-white/5">
+    <section id="contact" className="py-16 bg-transparent relative overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute top-1/4 right-0 w-80 h-80 bg-purple-500/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-1/4 left-1/10 w-96 h-96 bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
@@ -63,7 +64,13 @@ export default function Contact() {
           <p className="text-slate-400 text-xs max-w-sm mx-auto font-light mt-1 text-center">
             Send a message or connect directly. Let's transform raw numbers into strategic growth.
           </p>
-          <div className="h-[2px] w-10 bg-purple-500/80 mx-auto mt-2 rounded-full" />
+          <motion.div
+            initial={{ width: "16px", opacity: 0.4 }}
+            whileInView={{ width: "80px", opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="h-[2.5px] bg-gradient-to-r from-purple-500 to-cyan-400 mx-auto mt-2 rounded-full shadow-[0_0_8px_rgba(168,85,247,0.5)]"
+          />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start max-w-6xl mx-auto">

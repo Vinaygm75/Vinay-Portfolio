@@ -1,10 +1,11 @@
 import React from "react";
 import { Award, CheckCircle2, ShieldCheck, Cpu } from "lucide-react";
 import { CERTIFICATIONS } from "../data";
+import { motion } from "motion/react";
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="py-16 bg-transparent relative border-b border-white/5">
+    <section id="certifications" className="py-16 bg-transparent relative overflow-hidden">
       {/* Background Soft Glows */}
       <div className="absolute top-1/2 left-1/4 w-80 h-80 bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute top-1/3 right-1/4 w-85 h-85 bg-purple-500/5 rounded-full blur-[100px] pointer-events-none" />
@@ -20,7 +21,13 @@ export default function Certifications() {
           <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-100 tracking-tight">
             Accredited <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Certifications</span>
           </h2>
-          <div className="h-[2px] w-10 bg-purple-500/80 mx-auto mt-2 rounded-full" />
+          <motion.div
+            initial={{ width: "16px", opacity: 0.4 }}
+            whileInView={{ width: "80px", opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+            className="h-[2.5px] bg-gradient-to-r from-purple-500 to-cyan-400 mx-auto mt-2 rounded-full shadow-[0_0_8px_rgba(168,85,247,0.5)]"
+          />
         </div>
 
         {/* 3 Columns Responsive Grid */}
