@@ -100,10 +100,10 @@ export default function Projects() {
           {PROJECTS.map((project) => (
             <div
               key={project.id}
-              className={`p-5 sm:p-6 rounded-xl border transition-all duration-300 flex flex-col justify-between group h-full relative overflow-hidden bg-[#121214]/80 border-neutral-800 hover:border-white/20`}
+              className={`p-5 sm:p-6 rounded-xl border transition-all duration-300 flex flex-col justify-between group h-full relative overflow-hidden bg-[#121214]/80 border-neutral-800 hover:border-white/40 hover:bg-[#141416] hover:shadow-[0_0_25px_rgba(255,255,255,0.12)] active:border-white/60 active:bg-[#1c1c1f] active:shadow-[0_0_35px_rgba(255,255,255,0.22)] select-none cursor-pointer`}
             >
               {/* Highlight background glowing node */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/[0.02] to-transparent blur-md pointer-events-none" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/[0.02] to-transparent blur-md pointer-events-none group-hover:from-white/[0.08] group-active:from-white/[0.15] transition-all duration-300" />
 
               <div className="space-y-3">
                 {/* Upper row: Folder & Duration */}

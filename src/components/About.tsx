@@ -147,7 +147,7 @@ export default function About() {
               {/* Grid of 6 Competencies matching reference style */}
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 mt-6">
                 
-                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/20 transition-all">
+                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/40 hover:bg-[#1c1c1f] hover:shadow-[0_0_15px_rgba(255,255,255,0.08)] active:border-white/60 active:bg-[#222226] active:shadow-[0_0_20px_rgba(255,255,255,0.18)] select-none transition-all duration-300">
                   <h4 className="font-bold text-slate-100 text-xs sm:text-sm block mb-1">
                     Data Analytics
                   </h4>
@@ -155,8 +155,8 @@ export default function About() {
                     Data cleaning, trend analysis, and pattern discovery
                   </p>
                 </div>
-
-                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/20 transition-all">
+ 
+                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/40 hover:bg-[#1c1c1f] hover:shadow-[0_0_15px_rgba(255,255,255,0.08)] active:border-white/60 active:bg-[#222226] active:shadow-[0_0_20px_rgba(255,255,255,0.18)] select-none transition-all duration-300">
                   <h4 className="font-bold text-slate-100 text-xs sm:text-sm block mb-1">
                     Business Intelligence
                   </h4>
@@ -164,8 +164,8 @@ export default function About() {
                     Interactive dashboards, reporting automation, and KPI tracking
                   </p>
                 </div>
-
-                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/20 transition-all">
+ 
+                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/40 hover:bg-[#1c1c1f] hover:shadow-[0_0_15px_rgba(255,255,255,0.08)] active:border-white/60 active:bg-[#222226] active:shadow-[0_0_20px_rgba(255,255,255,0.18)] select-none transition-all duration-300">
                   <h4 className="font-bold text-slate-100 text-xs sm:text-sm block mb-1">
                     Excel Modeling
                   </h4>
@@ -173,8 +173,8 @@ export default function About() {
                     Advanced formulas, pivot structures, and automated spreadsheets
                   </p>
                 </div>
-
-                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/20 transition-all">
+ 
+                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/40 hover:bg-[#1c1c1f] hover:shadow-[0_0_15px_rgba(255,255,255,0.08)] active:border-white/60 active:bg-[#222226] active:shadow-[0_0_20px_rgba(255,255,255,0.18)] select-none transition-all duration-300">
                   <h4 className="font-bold text-slate-100 text-xs sm:text-sm block mb-1">
                     Power BI
                   </h4>
@@ -182,8 +182,8 @@ export default function About() {
                     DAX measures, Power Query transformations, and modeling
                   </p>
                 </div>
-
-                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/20 transition-all">
+ 
+                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/40 hover:bg-[#1c1c1f] hover:shadow-[0_0_15px_rgba(255,255,255,0.08)] active:border-white/60 active:bg-[#222226] active:shadow-[0_0_20px_rgba(255,255,255,0.18)] select-none transition-all duration-300">
                   <h4 className="font-bold text-slate-100 text-xs sm:text-sm block mb-1">
                     SQL Database
                   </h4>
@@ -191,8 +191,8 @@ export default function About() {
                     Optimized queries, database joins, and relational tables
                   </p>
                 </div>
-
-                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/20 transition-all">
+ 
+                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/40 hover:bg-[#1c1c1f] hover:shadow-[0_0_15px_rgba(255,255,255,0.08)] active:border-white/60 active:bg-[#222226] active:shadow-[0_0_20px_rgba(255,255,255,0.18)] select-none transition-all duration-300">
                   <h4 className="font-bold text-slate-100 text-xs sm:text-sm block mb-1">
                     Python
                   </h4>
@@ -200,7 +200,7 @@ export default function About() {
                     Basic data wrangling, pandas, and automation scripting
                   </p>
                 </div>
-
+ 
               </div>
 
             </div>

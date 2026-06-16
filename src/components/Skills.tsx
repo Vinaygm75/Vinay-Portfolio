@@ -29,16 +29,7 @@ export default function Skills() {
   };
 
   const getCategoryStyle = (title: string) => {
-    switch (title) {
-      case "Data Analytics":
-        return "border-neutral-800 bg-[#121214]/80 hover:border-white/20 hover:bg-[#161619]";
-      case "Tools & Technologies":
-        return "border-neutral-800 bg-[#121214]/80 hover:border-white/20 hover:bg-[#161619]";
-      case "Soft Skills":
-        return "border-neutral-800 bg-[#121214]/80 hover:border-white/20 hover:bg-[#161619]";
-      default:
-        return "border-neutral-800 bg-[#121214]/80";
-    }
+    return "border-neutral-800 bg-[#121214]/80 hover:border-white/40 hover:bg-[#141416] hover:shadow-[0_0_25px_rgba(255,255,255,0.12)] active:border-white/60 active:bg-[#1c1c1f] active:shadow-[0_0_35px_rgba(255,255,255,0.22)] cursor-pointer select-none transition-all duration-300";
   };
 
   const getProgressColor = (categoryTitle: string) => {
@@ -75,10 +66,12 @@ export default function Skills() {
           {SKILL_CATEGORIES.map((category) => (
             <div
               key={category.title}
-              className={`p-5 rounded-xl border backdrop-blur-md transition-all duration-300 flex flex-col justify-between ${getCategoryStyle(
+              className={`p-5 rounded-xl border backdrop-blur-md transition-all duration-300 flex flex-col justify-between group relative overflow-hidden ${getCategoryStyle(
                 category.title
               )}`}
             >
+              {/* Highlight background glowing node */}
+              <div className="absolute -top-12 -right-12 w-28 h-28 bg-white/[0.012] rounded-full blur-xl group-hover:bg-white/[0.08] group-active:bg-white/[0.15] transition-all duration-300 pointer-events-none" />
               {/* Card Header */}
               <div className="space-y-3 mb-4">
                 <div className="flex items-center space-x-2.5 pb-2 border-b border-white/5">
@@ -138,7 +131,7 @@ export default function Skills() {
             {STRENGTHS.map((strength, index) => (
               <span
                 key={index}
-                className="px-3 py-1.2 rounded bg-[#161619] border border-neutral-800 text-[11px] font-sans font-medium text-slate-300 hover:text-white hover:border-white/20 hover:shadow-md transition-all duration-300 cursor-default"
+                className="px-3 py-1.2 rounded bg-[#161619] border border-neutral-800 text-[11px] font-sans font-medium text-slate-300 hover:text-white hover:border-white/40 hover:bg-[#1c1c1f] hover:shadow-[0_0_15px_rgba(255,255,255,0.12)] active:border-white/60 active:bg-[#222226] active:shadow-[0_0_20px_rgba(255,255,255,0.18)] transition-all duration-300 cursor-default select-none"
               >
                 {strength}
               </span>

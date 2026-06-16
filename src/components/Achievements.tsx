@@ -88,10 +88,12 @@ export default function Achievements() {
                 key={idx}
                 onMouseEnter={() => setHoveredIndex(idx)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className="p-5 rounded-xl bg-[#121214]/80 border border-neutral-800 hover:border-white/20 transition-all duration-300 relative group overflow-hidden text-left"
+                onTouchStart={() => setHoveredIndex(idx)}
+                onTouchEnd={() => setHoveredIndex(null)}
+                className="p-5 rounded-xl bg-[#121214]/80 border border-neutral-800 hover:border-white/40 hover:bg-[#141416] hover:shadow-[0_0_25px_rgba(255,255,255,0.12)] active:border-white/60 active:bg-[#1c1c1f] active:shadow-[0_0_35px_rgba(255,255,255,0.22)] select-none transition-all duration-300 relative group overflow-hidden text-left cursor-pointer"
               >
                 {/* Visual glow node */}
-                <div className="absolute -top-12 -right-12 w-28 h-28 bg-white/[0.012] rounded-full blur-xl group-hover:bg-white/[0.025] transition-colors" />
+                <div className="absolute -top-12 -right-12 w-28 h-28 bg-white/[0.012] rounded-full blur-xl group-hover:bg-white/[0.08] group-active:bg-white/[0.15] transition-all duration-300 pointer-events-none" />
 
                 <div className="space-y-3">
                   
