@@ -47,19 +47,19 @@ export default function Contact() {
   return (
     <section id="contact" className="py-16 bg-transparent relative overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-1/4 right-0 w-80 h-80 bg-purple-500/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-1/4 left-1/10 w-96 h-96 bg-cyan-500/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/4 right-0 w-80 h-80 bg-white/[0.005] rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-1/4 left-1/10 w-96 h-96 bg-white/[0.005] rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Heading */}
         <div className="text-center mb-12 space-y-1.5">
           <div className="inline-flex items-center space-x-2">
-            <MessageSquare className="w-4 h-4 text-purple-400" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-purple-400">// COMMUNICATIONS</span>
+            <MessageSquare className="w-4 h-4 text-white" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-slate-400">COMMUNICATIONS</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-100 tracking-tight">
-            Let's <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Connect</span>
+            Let's <span className="text-white">Connect</span>
           </h2>
           <p className="text-slate-400 text-xs max-w-sm mx-auto font-light mt-1 text-center">
             Send a message or connect directly. Let's transform raw numbers into strategic growth.
@@ -69,7 +69,7 @@ export default function Contact() {
             whileInView={{ width: "80px", opacity: 1 }}
             viewport={{ once: false }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            className="h-[2.5px] bg-gradient-to-r from-purple-500 to-cyan-400 mx-auto mt-2 rounded-full shadow-[0_0_8px_rgba(168,85,247,0.5)]"
+            className="h-[2px] bg-white mx-auto mt-2 rounded-full"
           />
         </div>
 
@@ -83,14 +83,14 @@ export default function Contact() {
             </h3>
 
             {/* Email card with integrated Copy clipboard helper */}
-            <div className="p-3.5 rounded-xl bg-white/3 border border-white/5 hover:border-cyan-500/30 active:scale-[0.99] transition-all flex items-center justify-between group">
+            <div className="p-3.5 rounded-xl bg-[#121214]/80 border border-neutral-800 hover:border-white/20 active:scale-[0.99] transition-all flex items-center justify-between group">
               <div className="flex items-center space-x-3.5">
-                <div className="p-2 rounded-lg bg-cyan-500/10 text-cyan-400">
+                <div className="p-2 rounded-lg bg-white/5 border border-neutral-800 text-white">
                   <Mail className="w-4 h-4" />
                 </div>
                 <div className="text-left">
                   <span className="font-mono text-[9px] text-slate-500 uppercase tracking-wider block font-bold">EMAIL ADDRESS</span>
-                  <a href={`mailto:${PERSONAL_INFO.email}`} className="text-slate-200 text-xs font-semibold hover:text-cyan-400 hover:underline">
+                  <a href={`mailto:${PERSONAL_INFO.email}`} className="text-slate-200 text-xs font-semibold hover:text-white hover:underline">
                     {PERSONAL_INFO.email}
                   </a>
                 </div>
@@ -98,10 +98,10 @@ export default function Contact() {
 
               <button
                 onClick={handleCopyEmail}
-                className="p-1.5 rounded-md bg-[#020617] border border-white/10 text-slate-400 hover:text-cyan-400 hover:border-cyan-400/40 transition-colors"
+                className="p-1.5 rounded bg-[#161619] border border-neutral-850 text-slate-400 hover:text-white hover:border-white/20 transition-colors"
                 title="Copy Email to Clipboard"
               >
-                {copiedEmail ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+                {copiedEmail ? <Check className="w-3.5 h-3.5 text-white" /> : <Copy className="w-3.5 h-3.5" />}
               </button>
             </div>
 
@@ -110,14 +110,14 @@ export default function Contact() {
               href={PERSONAL_INFO.socials.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3.5 rounded-xl bg-white/3 border border-white/5 hover:border-cyan-500/30 active:scale-[0.99] transition-all flex items-center space-x-3.5 group text-left block"
+              className="p-3.5 rounded-xl bg-[#121214]/80 border border-neutral-800 hover:border-white/20 active:scale-[0.99] transition-all flex items-center space-x-3.5 group text-left block"
             >
-              <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400 group-hover:bg-blue-500/20 transition-colors">
+              <div className="p-2 rounded-lg bg-white/5 border border-neutral-800 text-white transition-colors">
                 <Linkedin className="w-4 h-4" />
               </div>
               <div>
                 <span className="font-mono text-[9px] text-slate-500 uppercase tracking-wider block font-bold">LINKEDIN PROFILE</span>
-                <span className="text-slate-200 text-xs font-semibold group-hover:text-cyan-350 transition-colors">
+                <span className="text-slate-200 text-xs font-semibold group-hover:text-white transition-colors">
                   LinkedIn
                 </span>
               </div>
@@ -128,22 +128,22 @@ export default function Contact() {
               href={PERSONAL_INFO.socials.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3.5 rounded-xl bg-white/3 border border-white/5 hover:border-cyan-500/30 active:scale-[0.99] transition-all flex items-center space-x-3.5 group text-left block"
+              className="p-3.5 rounded-xl bg-[#121214]/80 border border-neutral-800 hover:border-white/20 active:scale-[0.99] transition-all flex items-center space-x-3.5 group text-left block"
             >
-              <div className="p-2 rounded-lg bg-purple-500/10 text-purple-400 group-hover:bg-purple-500/20 transition-colors">
+              <div className="p-2 rounded-lg bg-white/5 border border-neutral-800 text-white transition-colors">
                 <Github className="w-4 h-4" />
               </div>
               <div>
                 <span className="font-mono text-[9px] text-slate-500 uppercase tracking-wider block font-bold">GITHUB REPOSITORIES</span>
-                <span className="text-slate-200 text-xs font-semibold group-hover:text-cyan-350 transition-colors">
+                <span className="text-slate-200 text-xs font-semibold group-hover:text-white transition-colors">
                   GitHub
                 </span>
               </div>
             </a>
 
             {/* Location Coordinate Card */}
-            <div className="p-3.5 rounded-xl bg-white/3 border border-white/5 flex items-center space-x-3.5 text-left">
-              <div className="p-2 rounded-lg bg-amber-500/10 text-amber-400">
+            <div className="p-3.5 rounded-xl bg-[#121214]/80 border border-neutral-800 flex items-center space-x-3.5 text-left">
+              <div className="p-2 rounded-lg bg-white/5 border border-neutral-800 text-white">
                 <MapPin className="w-4 h-4" />
               </div>
               <div>
@@ -160,9 +160,9 @@ export default function Contact() {
                 href={PERSONAL_INFO.resumeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-2.5 rounded-lg bg-gradient-to-r from-cyan-500/10 to-purple-500/10 border border-cyan-400/20 text-cyan-300 hover:text-slate-100 hover:from-cyan-500/20 hover:to-purple-500/20 transition-all duration-300 flex items-center justify-center space-x-2 text-xs font-bold uppercase tracking-wider group"
+                className="w-full py-2.5 rounded bg-white text-[#080808] hover:bg-neutral-205 transition-all duration-300 flex items-center justify-center space-x-2 text-xs font-extrabold uppercase tracking-widest group"
               >
-                <FileDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform text-cyan-400" />
+                <FileDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform text-[#080808]" />
                 <span>Download Analyst Resume (PDF)</span>
               </a>
             </div>
@@ -172,10 +172,10 @@ export default function Contact() {
           {/* Right Column: Interaction Form */}
           <div className="lg:col-span-7">
             
-            <div className="p-5 sm:p-6 rounded-xl border border-white/10 bg-white/3 backdrop-blur-md relative">
+            <div className="p-5 sm:p-6 rounded-xl border border-neutral-805 bg-[#121214]/80 backdrop-blur-md relative">
               
               {/* Highlight corner */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/5 to-transparent blur-md pointer-events-none" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/[0.015] to-transparent blur-md pointer-events-none" />
 
               {!isSuccess ? (
                 // Clean Inquiry Form
@@ -190,7 +190,7 @@ export default function Contact() {
                       placeholder="e.g. Recruiters, Hiring Managers, Founders"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-3 py-2 bg-[#020617] border border-white/10 rounded-lg text-slate-100 text-xs placeholder-slate-600 focus:outline-none focus:border-cyan-400 font-sans transition-colors"
+                      className="w-full px-3 py-2 bg-[#0a0a0c] border border-neutral-800 rounded text-slate-100 text-xs placeholder-slate-600 focus:outline-none focus:border-white/30 font-sans transition-colors"
                     />
                   </div>
 
@@ -204,7 +204,7 @@ export default function Contact() {
                       placeholder="e.g. recruiter@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3 py-2 bg-[#020617] border border-white/10 rounded-lg text-slate-100 text-xs placeholder-slate-600 focus:outline-none focus:border-cyan-400 font-sans transition-colors"
+                      className="w-full px-3 py-2 bg-[#0a0a0c] border border-neutral-800 rounded text-slate-100 text-xs placeholder-slate-600 focus:outline-none focus:border-white/30 font-sans transition-colors"
                     />
                   </div>
 
@@ -218,7 +218,7 @@ export default function Contact() {
                       placeholder="Tell me about your job opening, team coordinates, or desired dashboard specifications..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-3 py-2 bg-[#020617] border border-white/10 rounded-lg text-slate-100 text-xs placeholder-slate-600 focus:outline-none focus:border-cyan-400 font-sans leading-relaxed transition-colors resize-none"
+                      className="w-full px-3 py-2 bg-[#0a0a0c] border border-neutral-800 rounded text-slate-100 text-xs placeholder-slate-600 focus:outline-none focus:border-white/30 font-sans leading-relaxed transition-colors resize-none"
                     />
                   </div>
 
@@ -227,7 +227,7 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-2.5 rounded-lg bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold uppercase tracking-wider text-xs duration-300 transition-all flex items-center justify-center space-x-1.5 hover:shadow-[0_0_15px_rgba(6,182,212,0.3)] disabled:opacity-50 cursor-pointer"
+                      className="w-full py-2.5 rounded bg-white text-[#080808] hover:bg-neutral-200 font-bold uppercase tracking-widest text-xs duration-300 transition-all flex items-center justify-center space-x-1.5 disabled:opacity-50 cursor-pointer"
                     >
                       {isSubmitting ? (
                         <>
@@ -236,7 +236,7 @@ export default function Contact() {
                         </>
                       ) : (
                         <>
-                          <Send className="w-3.5 h-3.5 text-slate-950" />
+                          <Send className="w-3.5 h-3.5 text-[#080808]" />
                           <span>Transmit Proposal</span>
                         </>
                       )}
@@ -247,26 +247,26 @@ export default function Contact() {
                 // Success diagnostic ticket view
                 <div className="p-4 text-center space-y-4 animate-fade-in text-left">
                   <div className="flex justify-center">
-                    <div className="p-2.5 bg-emerald-500/10 rounded-full border border-emerald-500/30">
-                      <CheckCircle2 className="w-8 h-8 text-emerald-400" />
+                    <div className="p-2.5 bg-white/5 rounded-full border border-white/10">
+                      <CheckCircle2 className="w-8 h-8 text-white" />
                     </div>
                   </div>
 
-                  <div className="space-y-1.5 text-center">
-                    <span className="font-mono text-[9px] text-emerald-400 font-bold uppercase">[ Packet transmission successful ]</span>
+                  <div className="text-center space-y-1.5">
+                    <span className="font-mono text-[9px] text-white font-bold uppercase">[ Packet transmission successful ]</span>
                     <h4 className="font-display font-extrabold text-slate-100 text-sm sm:text-base">
                       Proposal Dispatched Successfully!
                     </h4>
                     <p className="text-slate-400 text-xs max-w-sm mx-auto leading-relaxed">
-                      Thank you for reaching out. Your message log has been buffered in the local database queue and mock-routed to GM Vinay Kumar.
+                      Thank you for reaching out. Your message log has been buffered in the local database queue.
                     </p>
                   </div>
 
                   {/* Local Diagnostic Receipt Card */}
-                  <div className="p-3.5 rounded-lg bg-[#020617] border border-white/5 text-left space-y-1.5 text-xs font-mono">
+                  <div className="p-3.5 rounded-lg bg-[#0a0a0c] border border-neutral-800 text-left space-y-1.5 text-xs font-mono text-slate-350">
                     <div className="text-slate-500 flex justify-between">
                       <span>PACKET METRICS:</span>
-                      <span className="text-cyan-400 font-bold">[ LOCAL DB SECURE ]</span>
+                      <span className="text-white font-bold">[ LOCAL DB SECURED ]</span>
                     </div>
                     <div className="h-[1px] bg-white/5 w-full" />
                     <div>
@@ -282,7 +282,7 @@ export default function Contact() {
                   <div className="flex justify-center">
                     <button
                       onClick={() => setIsSuccess(false)}
-                      className="px-4 py-2 rounded-lg bg-[#020617] border border-white/10 text-slate-300 hover:text-slate-100 text-[10px] uppercase tracking-wider font-mono hover:border-cyan-500/30 transition-all cursor-pointer"
+                      className="px-4 py-2 rounded bg-[#161619] border border-neutral-800 text-slate-300 hover:text-white text-[10px] uppercase tracking-wider font-mono transition-all cursor-pointer"
                     >
                       [ Transmit new packet ]
                     </button>

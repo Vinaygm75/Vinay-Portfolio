@@ -18,64 +18,55 @@ export default function Skills() {
   const getCategoryIcon = (title: string) => {
     switch (title) {
       case "Data Analytics":
-        return <TrendingUp className="w-5 h-5 text-cyan-400" />;
+        return <TrendingUp className="w-5 h-5 text-white" />;
       case "Tools & Technologies":
-        return <Hammer className="w-5 h-5 text-purple-400" />;
+        return <Hammer className="w-5 h-5 text-white" />;
       case "Soft Skills":
-        return <Lightbulb className="w-5 h-5 text-amber-400" />;
+        return <Lightbulb className="w-5 h-5 text-white" />;
       default:
-        return <Cpu className="w-5 h-5 text-cyan-400" />;
+        return <Cpu className="w-5 h-5 text-white" />;
     }
   };
 
   const getCategoryStyle = (title: string) => {
     switch (title) {
       case "Data Analytics":
-        return "border-cyan-500/20 bg-white/5 hover:border-cyan-400/40";
+        return "border-neutral-800 bg-[#121214]/80 hover:border-white/20 hover:bg-[#161619]";
       case "Tools & Technologies":
-        return "border-purple-500/20 bg-white/5 hover:border-purple-400/40";
+        return "border-neutral-800 bg-[#121214]/80 hover:border-white/20 hover:bg-[#161619]";
       case "Soft Skills":
-        return "border-cyan-500/20 bg-white/5 hover:border-cyan-400/40";
+        return "border-neutral-800 bg-[#121214]/80 hover:border-white/20 hover:bg-[#161619]";
       default:
-        return "border-white/5 bg-white/5";
+        return "border-neutral-800 bg-[#121214]/80";
     }
   };
 
   const getProgressColor = (categoryTitle: string) => {
-    switch (categoryTitle) {
-      case "Data Analytics":
-        return "bg-cyan-500";
-      case "Tools & Technologies":
-        return "bg-purple-500";
-      case "Soft Skills":
-        return "bg-cyan-500";
-      default:
-        return "bg-cyan-500";
-    }
+    return "bg-white";
   };
 
   return (
     <section id="skills" className="py-16 bg-transparent relative overflow-hidden">
       {/* Background Neon Elements */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-36 bg-gradient-to-r from-cyan-500/5 to-purple-500/5 blur-[80px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-36 bg-white/[0.008] blur-[80px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Heading */}
         <div className="text-center mb-12 space-y-1.5">
           <div className="inline-flex items-center space-x-2">
-            <Zap className="w-4 h-4 text-purple-400" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-purple-400">// ANALYTIC ENGINE CAPABILITY</span>
+            <Zap className="w-4 h-4 text-neutral-400" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-neutral-400">ANALYTIC ENGINE CAPABILITY</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-100 tracking-tight">
-            Technical & Soft <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Skills</span>
+            Technical & Soft <span className="text-white">Skills</span>
           </h2>
           <motion.div
             initial={{ width: "16px", opacity: 0.4 }}
             whileInView={{ width: "80px", opacity: 1 }}
             viewport={{ once: false }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            className="h-[2.5px] bg-gradient-to-r from-purple-500 to-cyan-400 mx-auto mt-2 rounded-full shadow-[0_0_8px_rgba(168,85,247,0.5)]"
+            className="h-[2px] bg-white mx-auto mt-2 rounded-full"
           />
         </div>
 
@@ -107,7 +98,7 @@ export default function Skills() {
                         <span className="font-sans font-medium text-slate-300 group-hover/skill:text-slate-100 transition-colors">
                           {skill.name}
                         </span>
-                        <span className="font-mono text-cyan-400 font-bold">
+                        <span className="font-mono text-white font-bold">
                           {skill.level}%
                         </span>
                       </div>
@@ -130,26 +121,24 @@ export default function Skills() {
               {/* Card Footer Metric Label */}
               <div className="pt-3 border-t border-white/5 flex items-center justify-between text-[9px] font-mono uppercase text-slate-500">
                 <span>Category Status</span>
-                <span className="text-cyan-400 tracking-wider font-bold">[ Active insights ]</span>
+                <span className="text-white tracking-wider font-bold">[ Active insights ]</span>
               </div>
             </div>
           ))}
         </div>
 
         {/* Strengths Pills Section */}
-        <div className="mt-12 bg-white/3 border border-white/5 rounded-xl p-5 sm:p-6 text-center relative overflow-hidden">
-          {/* Neon side bars */}
-          <div className="absolute top-0 bottom-0 left-0 w-[2px] bg-gradient-to-b from-cyan-400 to-purple-400" />
+        <div className="mt-12 bg-[#121214]/80 border border-neutral-800 rounded-xl p-5 sm:p-6 text-center relative overflow-hidden">
           
           <h3 className="font-display font-semibold text-sm text-slate-200 mb-4 flex items-center justify-center gap-2">
-            <CheckSquare className="w-4 h-4 text-cyan-400" /> Professional Strengths & Work Ethics
+            <CheckSquare className="w-4 h-4 text-white" /> Professional Strengths & Work Ethics
           </h3>
 
           <div className="flex flex-wrap justify-center gap-2">
             {STRENGTHS.map((strength, index) => (
               <span
                 key={index}
-                className="px-3 py-1.5 rounded-lg bg-[#020617] border border-white/5 text-[11px] font-sans font-medium text-slate-300 hover:text-cyan-300 hover:border-cyan-500/30 hover:shadow-[0_0_8px_rgba(34,211,238,0.15)] transition-all duration-300 cursor-default"
+                className="px-3 py-1.2 rounded bg-[#161619] border border-neutral-800 text-[11px] font-sans font-medium text-slate-300 hover:text-white hover:border-white/20 hover:shadow-md transition-all duration-300 cursor-default"
               >
                 {strength}
               </span>

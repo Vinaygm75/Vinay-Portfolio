@@ -30,7 +30,7 @@ function AnimatedCounter({ target, suffix }: CounterProps) {
   }, [target]);
 
   return (
-    <span className="font-mono text-3xl sm:text-4xl font-extrabold tracking-tight bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+    <span className="font-mono text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
       {count}
       {suffix}
     </span>
@@ -48,34 +48,34 @@ export default function Achievements() {
   };
 
   const getIcon = (label: string) => {
-    if (label.includes("Projects")) return <BarChart3 className="w-5 h-5 text-cyan-400" />;
-    if (label.includes("Dashboards")) return <TrendingUp className="w-5 h-5 text-blue-400" />;
-    if (label.includes("Training")) return <GraduationCap className="w-5 h-5 text-purple-400" />;
-    return <Award className="w-5 h-5 text-amber-400" />;
+    if (label.includes("Projects")) return <BarChart3 className="w-5 h-5 text-white" />;
+    if (label.includes("Dashboards")) return <TrendingUp className="w-5 h-5 text-white" />;
+    if (label.includes("Training")) return <GraduationCap className="w-5 h-5 text-white" />;
+    return <Award className="w-5 h-5 text-white" />;
   };
 
   return (
     <section id="achievements" className="py-16 bg-transparent relative overflow-hidden">
       {/* Dynamic blurred layout meshes */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-purple-600/5 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-white/[0.005] rounded-full blur-[130px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Heading */}
         <div className="text-center mb-12 space-y-1.5">
           <div className="inline-flex items-center space-x-2">
-            <TrendingUp className="w-4 h-4 text-cyan-400" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-cyan-400">// ANALYTICAL MILESTONES</span>
+            <TrendingUp className="w-4 h-4 text-white" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-slate-400">ANALYTICAL MILESTONES</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-100 tracking-tight">
-            Key Career <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Highlights</span>
+            Key Career <span className="text-white">Highlights</span>
           </h2>
           <motion.div
             initial={{ width: "16px", opacity: 0.4 }}
             whileInView={{ width: "80px", opacity: 1 }}
             viewport={{ once: false }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            className="h-[2.5px] bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mt-2 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.5)]"
+            className="h-[2px] bg-white mx-auto mt-2 rounded-full"
           />
         </div>
 
@@ -88,10 +88,10 @@ export default function Achievements() {
                 key={idx}
                 onMouseEnter={() => setHoveredIndex(idx)}
                 onMouseLeave={() => setHoveredIndex(null)}
-                className="p-5 rounded-xl bg-white/3 border border-white/5 hover:border-cyan-400/35 transition-all duration-300 relative group overflow-hidden text-left"
+                className="p-5 rounded-xl bg-[#121214]/80 border border-neutral-800 hover:border-white/20 transition-all duration-300 relative group overflow-hidden text-left"
               >
                 {/* Visual glow node */}
-                <div className="absolute -top-12 -right-12 w-28 h-28 bg-cyan-400/5 rounded-full blur-xl group-hover:bg-cyan-400/10 transition-colors" />
+                <div className="absolute -top-12 -right-12 w-28 h-28 bg-white/[0.012] rounded-full blur-xl group-hover:bg-white/[0.025] transition-colors" />
 
                 <div className="space-y-3">
                   
@@ -101,7 +101,7 @@ export default function Achievements() {
                       {getIcon(ach.label)}
                     </div>
                     {hoveredIndex === idx && (
-                      <span className="font-mono text-[9px] text-cyan-400 animate-pulse font-bold uppercase">
+                      <span className="font-mono text-[9px] text-white animate-pulse font-bold uppercase">
                         [ Active hover ]
                       </span>
                     )}

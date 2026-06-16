@@ -12,7 +12,7 @@ export default function Footer() {
   return (
     <footer className="bg-transparent border-t border-white/5 py-10 relative overflow-hidden">
       {/* Subtle particle node glow */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-32 bg-cyan-400/5 blur-[50px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-80 h-32 bg-white/[0.005] blur-[50px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
@@ -20,8 +20,8 @@ export default function Footer() {
           {/* Logo Brand / Copy */}
           <div className="space-y-1.5 text-left">
             <div className="flex items-center space-x-2">
-              <Database className="w-4 h-4 text-cyan-400" />
-              <span className="font-display font-extrabold text-sm tracking-wider text-slate-100 uppercase">
+              <Database className="w-4 h-4 text-white" />
+              <span className="font-name font-black text-sm tracking-wide text-slate-100 uppercase">
                 GM VINAY KUMAR
               </span>
             </div>
@@ -35,14 +35,14 @@ export default function Footer() {
 
           {/* Quick blueprint jump actions / return back block */}
           <div className="flex items-center space-x-4 justify-start md:justify-end">
-            <div className="flex items-center space-x-1.5 text-[10px] text-slate-505 font-mono">
-              <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+            <div className="flex items-center space-x-1.5 text-[10px] text-slate-550 font-mono">
+              <Sparkles className="w-3.5 h-3.5 text-white" />
               <span>Recruiter Portal v1.0.0</span>
             </div>
 
             <button
               onClick={scrollToTop}
-              className="p-2 px-3 rounded-lg bg-white/3 border border-white/5 text-slate-300 hover:text-cyan-400 hover:border-cyan-400/30 hover:shadow-[0_0_12px_rgba(6,182,212,0.15)] transition-all flex items-center gap-1.5 text-[10px] uppercase font-mono cursor-pointer"
+              className="p-2 px-3 rounded bg-[#121214] border border-neutral-800 text-slate-300 hover:text-white hover:border-white/20 transition-all flex items-center gap-1.5 text-[10px] uppercase font-mono cursor-pointer"
             >
               <ArrowUp className="w-3.5 h-3.5 animate-pulse" />
               <span>Reset Position</span>
@@ -54,7 +54,7 @@ export default function Footer() {
         {/* Separator / Copyright lower block */}
         <div className="mt-6 pt-6 border-t border-white/5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-[10px] font-mono text-slate-600">
           <p className="text-left font-light">
-            &copy; 2026 GM Vinay Kumar. All Rights Reserved.
+            &copy; 2026 <span className="font-name font-bold">GM Vinay Kumar</span>. All Rights Reserved.
           </p>
           <div className="flex space-x-4">
             <span className="hover:text-slate-400 cursor-default">Designed for recruiting officers</span>

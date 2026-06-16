@@ -124,7 +124,7 @@ export const PROJECTS: ProjectItem[] = [
     id: "proj-1",
     title: "Sales & Profit Analysis Dashboard",
     tech: ["SQL", "Excel", "Power BI"],
-    duration: "Jul 2025 – Aug 2025",
+    duration: "Oct 2025 - Nov 2025",
     description: "Extracted, cleaned, and analyzed 50K+ retail sales records using SQL and Excel ETL workflows, performing EDA to identify revenue trends, regional profitability patterns, and product performance correlations. Developed an interactive Power BI dashboard with DAX KPIs and automated reporting for visual storytelling of business performance.",
     projectLink: "https://www.image2url.com/r2/default/documents/1781517284669-d88a5c39-4f56-46c7-8cfa-dde4e03037a3.pdf",
     accentColor: "cyan"
@@ -152,6 +152,7 @@ export const PROJECTS: ProjectItem[] = [
     id: "proj-4",
     title: "Swiggy Sales Dashboard",
     tech: ["Excel"],
+    duration: "April 2026 - May 2026",
     description: "Built an interactive Excel dashboard to analyze sales, restaurants, cuisines, and delivery performance. Used Pivot Tables, Charts, Slicers, and KPI cards for data visualization and reporting. Performed data cleaning and trend analysis to support business decision-making.",
     accentColor: "amber"
   }

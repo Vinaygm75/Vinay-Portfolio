@@ -51,7 +51,7 @@ export default function Header({ activeSection }: HeaderProps) {
       id="site-header"
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "glass-panel bg-[#020617]/90 border-b border-cyan-500/25 backdrop-blur-md shadow-[0_4px_20px_rgba(2,6,23,0.9)]"
+          ? "glass-panel bg-[#080808]/90 border-b border-white/10 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.8)]"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -63,13 +63,13 @@ export default function Header({ activeSection }: HeaderProps) {
             className="flex items-center space-x-2.5 cursor-pointer group"
           >
             <div className="relative flex items-center justify-center w-8 h-8 rounded-lg bg-white/20 p-[1px] transition-transform duration-300 group-hover:scale-105">
-              <div className="flex items-center justify-center w-full h-full bg-[#020617] rounded-[7px]">
+              <div className="flex items-center justify-center w-full h-full bg-[#080808] rounded-[7px]">
                 <Database className="w-4 h-4 text-white transition-colors duration-300" />
               </div>
               <div className="absolute inset-0 bg-white/10 blur-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             </div>
             <div>
-              <span className="font-display font-bold text-sm tracking-wider text-white transition-colors">
+              <span className="font-name font-black text-sm tracking-wide text-white transition-colors">
                 <span>Vinay</span>
               </span>
               <span className="hidden sm:inline-block ml-1.5 text-[9px] font-mono uppercase tracking-[0.25em] text-white/60">
@@ -87,13 +87,13 @@ export default function Header({ activeSection }: HeaderProps) {
                 onClick={() => handleScrollTo(item.id)}
                 className={`relative px-3 py-1.5 rounded-md font-sans text-[11px] tracking-wide uppercase transition-all duration-300 ${
                   activeSection === item.id
-                    ? "text-cyan-400 font-semibold"
+                    ? "text-white font-semibold"
                     : "text-slate-400 hover:text-slate-100 hover:bg-slate-800/10"
                 }`}
               >
                 <span>{item.label}</span>
                 {activeSection === item.id && (
-                  <span className="absolute bottom-[-2px] left-3 right-3 h-[2px] bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full shadow-[0_0_8px_#22d3ee]" />
+                  <span className="absolute bottom-[-2px] left-3 right-3 h-[1.5px] bg-white rounded-full" />
                 )}
               </button>
             ))}
@@ -106,9 +106,9 @@ export default function Header({ activeSection }: HeaderProps) {
               target="_blank"
               rel="noopener noreferrer"
               id="desktop-resume-btn"
-              className="flex items-center space-x-2 px-4 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-300 hover:text-slate-100 hover:bg-cyan-600 hover:border-transparent transition-all duration-300 text-[10px] font-bold tracking-wider uppercase group"
+              className="flex items-center space-x-1.5 px-3.5 py-1.5 rounded bg-white text-[#080808] hover:bg-neutral-200 transition-all duration-300 text-[10px] font-bold tracking-wider uppercase group"
             >
-              <FileDown className="w-3.5 h-3.5 group-hover:translate-y-[1px] transition-transform" />
+              <FileDown className="w-3.5 h-3.5" />
               <span>Resume</span>
             </a>
           </div>
@@ -119,7 +119,7 @@ export default function Header({ activeSection }: HeaderProps) {
               href={PERSONAL_INFO.resumeUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center p-1.5 rounded-md bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/20 transition-all text-xs"
+              className="flex items-center p-1.5 rounded bg-white text-[#080808] hover:bg-neutral-200 transition-all text-xs"
               title="Download Resume"
             >
               <FileDown className="w-3.5 h-3.5" />
@@ -137,7 +137,7 @@ export default function Header({ activeSection }: HeaderProps) {
 
       {/* Mobile Drawer */}
       <div
-        className={`lg:hidden fixed inset-x-0 top-14 bg-[#020617]/95 border-b border-cyan-500/25 transition-all duration-300 overflow-hidden ${
+        className={`lg:hidden fixed inset-x-0 top-14 bg-[#080808]/95 border-b border-white/10 transition-all duration-300 overflow-hidden ${
           isOpen ? "max-h-[500px] py-4 opacity-100 backdrop-blur-lg" : "max-h-0 opacity-0 pointer-events-none"
         }`}
       >
@@ -148,13 +148,13 @@ export default function Header({ activeSection }: HeaderProps) {
               onClick={() => handleScrollTo(item.id)}
               className={`flex items-center justify-between w-full px-4 py-2 rounded-lg text-left text-xs uppercase tracking-wide transition-all ${
                 activeSection === item.id
-                  ? "bg-cyan-500/10 text-cyan-400 border border-cyan-400/20"
+                  ? "bg-white/10 text-white border border-white/10"
                   : "text-slate-400 hover:text-slate-100 hover:bg-slate-800/30"
               }`}
             >
               <span className="font-display font-medium">{item.label}</span>
               {activeSection === item.id ? (
-                <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+                <div className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
               ) : (
                 <ChevronRight className="w-3.5 h-3.5 text-slate-600" />
               )}

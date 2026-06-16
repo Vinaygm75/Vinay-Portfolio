@@ -28,19 +28,19 @@ export default function AnimatedBackground() {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#030014]">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-[#080808]">
       {/* 1. Shifting Interactive Cyber Grid Backdrop */}
-      <div className="absolute inset-0 cyber-grid opacity-[0.12] sm:opacity-[0.18]" />
+      <div className="absolute inset-0 cyber-grid opacity-[0.06] sm:opacity-[0.1]" />
 
-      {/* 2. Deep Cosmic Pulsing Nebulae / Ambient Lighting Orbs */}
+      {/* 2. Deep Monochromatic Pulsing Nebulae / Ambient Lighting Orbs */}
       <div className="absolute inset-0">
-        {/* Cyan Purple Center Glow */}
+        {/* Soft Center Glow */}
         <motion.div
-          className="absolute top-[10%] left-[-15%] sm:top-[5%] sm:left-[10%] w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] bg-cyan-700/10 rounded-full blur-[100px] sm:blur-[150px]"
+          className="absolute top-[10%] left-[-15%] sm:top-[5%] sm:left-[10%] w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] bg-white/[0.012] rounded-full blur-[100px] sm:blur-[150px]"
           animate={{
             x: [0, 40, -30, 0],
             y: [0, -30, 20, 0],
-            scale: [1, 1.15, 0.9, 1],
+            scale: [1, 1.1, 0.95, 1],
           }}
           transition={{
             duration: 25,
@@ -49,30 +49,16 @@ export default function AnimatedBackground() {
           }}
         />
 
-        {/* Purple Pink Drifting Orb */}
+        {/* Muted Drifting Orb */}
         <motion.div
-          className="absolute bottom-[20%] right-[-10%] sm:bottom-[10%] sm:right-[5%] w-[250px] h-[250px] sm:w-[500px] sm:h-[500px] bg-purple-900/10 rounded-full blur-[100px] sm:blur-[160px]"
+          className="absolute bottom-[20%] right-[-10%] sm:bottom-[10%] sm:right-[5%] w-[250px] h-[250px] sm:w-[500px] sm:h-[500px] bg-slate-500/[0.012] rounded-full blur-[100px] sm:blur-[160px]"
           animate={{
             x: [0, -50, 20, 0],
             y: [0, 40, -30, 0],
-            scale: [1, 0.85, 1.1, 1],
+            scale: [1, 0.9, 1.05, 1],
           }}
           transition={{
             duration: 28,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-
-        {/* Deep Blue Bottom-Left Orb */}
-        <motion.div
-          className="absolute bottom-[-10%] left-[-10%] w-[200px] h-[200px] sm:w-[450px] sm:h-[450px] bg-blue-900/10 rounded-full blur-[90px] sm:blur-[140px]"
-          animate={{
-            x: [0, 30, -20, 0],
-            y: [0, 20, -40, 0],
-          }}
-          transition={{
-            duration: 22,
             repeat: Infinity,
             ease: "easeInOut",
           }}
@@ -84,7 +70,7 @@ export default function AnimatedBackground() {
         {particles.map((p) => (
           <motion.div
             key={p.id}
-            className="absolute rounded-full bg-cyan-400/60 shadow-[0_0_6px_#22d3ee]"
+            className="absolute rounded-full bg-white/30 shadow-[0_0_4px_rgba(255,255,255,0.2)]"
             style={{
               left: `${p.x}%`,
               top: `${p.y}%`,
@@ -92,7 +78,7 @@ export default function AnimatedBackground() {
               height: `${p.size}px`,
             }}
             animate={{
-              opacity: [0.15, 0.85, 0.15],
+              opacity: [0.1, 0.7, 0.1],
               y: [0, -40, 0],
             }}
             transition={{
@@ -105,14 +91,14 @@ export default function AnimatedBackground() {
         ))}
       </div>
       
-      {/* Dynamic ambient scanline beam (highly cinematic cyber feel) */}
+      {/* Dynamic ambient scanline beam */}
       <motion.div 
-        className="absolute left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-500/10 to-transparent"
+        className="absolute left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/[0.03] to-transparent"
         animate={{
           top: ["-5%", "105%"]
         }}
         transition={{
-          duration: 15,
+          duration: 20,
           repeat: Infinity,
           ease: "linear"
         }}

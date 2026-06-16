@@ -67,7 +67,7 @@ export default function App() {
   }, []);
 
   return (
-    <div id="app-root-container" className="min-h-screen bg-[#030014] text-slate-100 flex flex-col justify-between selection:bg-cyan-500/30 selection:text-cyan-300 relative overflow-x-hidden">
+    <div id="app-root-container" className="min-h-screen bg-[#080808] text-slate-100 flex flex-col justify-between selection:bg-white/15 selection:text-white relative overflow-x-hidden">
       
       {/* Background ambient stars / matrix effect */}
       <AnimatedBackground />

@@ -33,8 +33,8 @@ export default function About() {
   return (
     <section id="about" className="py-20 bg-transparent relative overflow-hidden">
       {/* Background glow effects */}
-      <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-purple-900/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-cyan-900/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-white/[0.012] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-white/[0.01] rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
@@ -48,7 +48,7 @@ export default function About() {
             whileInView={{ width: "80px", opacity: 1 }}
             viewport={{ once: false }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            className="h-[2.5px] bg-gradient-to-r from-cyan-400 to-purple-500 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.5)]"
+            className="h-[2px] bg-white rounded-full"
           />
           <p className="text-slate-400 text-sm mt-1 pb-1">
             Professional snapshot of data, insights, and innovation.
@@ -59,13 +59,13 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           
           {/* Left Column: Profile Quick Card */}
-          <div className="lg:col-span-5 xl:col-span-5 h-full">
-            <div className="bg-[#0b1224]/75 border border-white/5 rounded-2xl p-6 md:p-8 flex items-center h-full">
+          <div className="lg:col-span-12 xl:col-span-5 h-full">
+            <div className="bg-[#121214]/80 border border-neutral-800 rounded-2xl p-6 md:p-8 flex items-center h-full">
               <div className="flex flex-col sm:flex-row items-center gap-6 w-full text-center sm:text-left">
                 
                 {/* Profile Photo - Round with safe border */}
                 <div className="relative shrink-0">
-                  <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden p-[2px] bg-gradient-to-b from-cyan-500/30 via-slate-800 to-purple-500/20">
+                  <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden p-[2px] bg-gradient-to-b from-white/20 via-neutral-800 to-neutral-900/45">
                     {!photoError ? (
                       <img
                         src={photoUrl}
@@ -75,7 +75,7 @@ export default function About() {
                         referrerPolicy="no-referrer"
                       />
                     ) : (
-                      <div className="w-full h-full rounded-full bg-slate-950 flex items-center justify-center font-mono text-cyan-400 text-lg font-bold">
+                      <div className="w-full h-full rounded-full bg-neutral-950 flex items-center justify-center font-mono text-white text-lg font-bold">
                         {PERSONAL_INFO.name.slice(0, 2)}
                       </div>
                     )}
@@ -85,7 +85,7 @@ export default function About() {
                 {/* Profile Info & Pills */}
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold text-white tracking-tight">
+                    <h3 className="text-xl font-name font-black text-white tracking-normal">
                       {PERSONAL_INFO.name}
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-400 mt-1 font-medium font-mono">
@@ -99,9 +99,9 @@ export default function About() {
                       href={PERSONAL_INFO.socials.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-white/5 bg-slate-950/40 text-xs text-slate-300 hover:text-cyan-400 hover:border-cyan-500/30 font-medium transition-all"
+                      className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-white/5 bg-neutral-950/40 text-xs text-slate-300 hover:text-white hover:border-white/20 font-medium transition-all"
                     >
-                      <Linkedin className="w-3.5 h-3.5 text-cyan-400" />
+                      <Linkedin className="w-3.5 h-3.5 text-neutral-300" />
                       <span>LinkedIn</span>
                     </a>
 
@@ -109,17 +109,17 @@ export default function About() {
                       href={PERSONAL_INFO.socials.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-white/5 bg-slate-950/40 text-xs text-slate-300 hover:text-purple-400 hover:border-purple-500/30 font-medium transition-all"
+                      className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-white/5 bg-neutral-950/40 text-xs text-slate-300 hover:text-white hover:border-white/20 font-medium transition-all"
                     >
-                      <Github className="w-3.5 h-3.5 text-slate-400" />
+                      <Github className="w-3.5 h-3.5 text-neutral-300" />
                       <span>GitHub</span>
                     </a>
 
                     <a
                       href={`mailto:${PERSONAL_INFO.email}`}
-                      className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-white/5 bg-slate-950/40 text-xs text-slate-300 hover:text-cyan-400 hover:border-cyan-500/30 font-medium transition-all"
+                      className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-white/5 bg-neutral-950/40 text-xs text-slate-300 hover:text-white hover:border-white/20 font-medium transition-all"
                     >
-                      <Mail className="w-3.5 h-3.5 text-purple-400" />
+                      <Mail className="w-3.5 h-3.5 text-neutral-300" />
                       <span>Email</span>
                     </a>
                   </div>
@@ -130,8 +130,8 @@ export default function About() {
           </div>
 
           {/* Right Column: Professional Summary & Key Fokus */}
-          <div className="lg:col-span-7 xl:col-span-7 h-full">
-            <div className="bg-[#0b1224]/75 border border-white/5 rounded-2xl p-6 sm:p-8 h-full flex flex-col justify-between">
+          <div className="lg:col-span-12 xl:col-span-7 h-full">
+            <div className="bg-[#121214]/80 border border-neutral-800 rounded-2xl p-6 sm:p-8 h-full flex flex-col justify-between">
               
               <div className="space-y-4">
                 <h3 className="text-base font-semibold text-slate-100 uppercase tracking-wider font-mono">
@@ -147,7 +147,7 @@ export default function About() {
               {/* Grid of 6 Competencies matching reference style */}
               <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 mt-6">
                 
-                <div className="bg-slate-900/45 border border-white/5 rounded-xl p-4 hover:border-cyan-500/20 transition-colors">
+                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/20 transition-all">
                   <h4 className="font-bold text-slate-100 text-xs sm:text-sm block mb-1">
                     Data Analytics
                   </h4>
@@ -156,7 +156,7 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="bg-slate-900/45 border border-white/5 rounded-xl p-4 hover:border-cyan-500/20 transition-colors">
+                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/20 transition-all">
                   <h4 className="font-bold text-slate-100 text-xs sm:text-sm block mb-1">
                     Business Intelligence
                   </h4>
@@ -165,7 +165,7 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="bg-slate-900/45 border border-white/5 rounded-xl p-4 hover:border-cyan-500/20 transition-colors">
+                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/20 transition-all">
                   <h4 className="font-bold text-slate-100 text-xs sm:text-sm block mb-1">
                     Excel Modeling
                   </h4>
@@ -174,7 +174,7 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="bg-slate-900/45 border border-white/5 rounded-xl p-4 hover:border-purple-500/20 transition-colors">
+                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/20 transition-all">
                   <h4 className="font-bold text-slate-100 text-xs sm:text-sm block mb-1">
                     Power BI
                   </h4>
@@ -183,7 +183,7 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="bg-slate-900/45 border border-white/5 rounded-xl p-4 hover:border-purple-500/20 transition-colors">
+                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/20 transition-all">
                   <h4 className="font-bold text-slate-100 text-xs sm:text-sm block mb-1">
                     SQL Database
                   </h4>
@@ -192,7 +192,7 @@ export default function About() {
                   </p>
                 </div>
 
-                <div className="bg-slate-900/45 border border-white/5 rounded-xl p-4 hover:border-purple-500/20 transition-colors">
+                <div className="bg-[#161619]/60 border border-white/5 rounded-xl p-4 hover:border-white/20 transition-all">
                   <h4 className="font-bold text-slate-100 text-xs sm:text-sm block mb-1">
                     Python
                   </h4>

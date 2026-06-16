@@ -59,51 +59,29 @@ export default function Projects() {
   const swiggyAvgPrice = (filteredSwiggy.reduce((acc, curr) => acc + curr.priceForTwo, 0) / (filteredSwiggy.length || 1)).toFixed(0);
 
   const getAccentClass = (color?: string) => {
-    switch (color) {
-      case "cyan":
-        return "border-cyan-400/20 text-cyan-400 focus:border-cyan-400/40";
-      case "blue":
-        return "border-blue-400/20 text-blue-400 focus:border-blue-400/40";
-      case "purple":
-        return "border-purple-400/20 text-purple-400 focus:border-purple-400/40";
-      case "amber":
-        return "border-amber-400/20 text-amber-400 focus:border-amber-400/40";
-      default:
-        return "border-slate-800 text-slate-400";
-    }
+    return "border-white/10 text-white focus:border-white/30";
   };
 
   const getAccentBg = (color?: string) => {
-    switch (color) {
-      case "cyan":
-        return "bg-cyan-500/10";
-      case "blue":
-        return "bg-blue-500/10";
-      case "purple":
-        return "bg-purple-500/10";
-      case "amber":
-        return "bg-amber-500/10";
-      default:
-        return "bg-slate-900/40";
-    }
+    return "bg-white/5";
   };
 
   return (
     <section id="projects" className="py-16 bg-transparent relative overflow-hidden">
       {/* Visual glowing clouds */}
-      <div className="absolute top-1/10 left-1/12 w-[500px] h-32 bg-cyan-500/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-1/10 right-1/12 w-[500px] h-32 bg-purple-500/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/10 left-1/12 w-[500px] h-32 bg-white/[0.008] blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-1/10 right-1/12 w-[500px] h-32 bg-white/[0.008] blur-[120px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Heading */}
         <div className="text-center mb-12 space-y-1.5">
           <div className="inline-flex items-center space-x-2">
-            <FolderGit2 className="w-4 h-4 text-cyan-400" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-cyan-400">// ANALYTIC PROJECTS</span>
+            <FolderGit2 className="w-4 h-4 text-white" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-slate-400">ANALYTIC PROJECTS</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-display font-bold text-slate-100 tracking-tight">
-            Featured <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">Projects</span>
+            Featured <span className="text-white">Projects</span>
           </h2>
           <p className="text-slate-400 text-xs max-w-lg mx-auto font-light mt-1 text-center">
             Click on any dashboard to launch an interactive live emulator, read metrics summary, or retrieve official PDF sheets.
@@ -113,7 +91,7 @@ export default function Projects() {
             whileInView={{ width: "80px", opacity: 1 }}
             viewport={{ once: false }}
             transition={{ duration: 1.5, ease: "easeOut" }}
-            className="h-[2.5px] bg-gradient-to-r from-cyan-400 to-purple-500 mx-auto mt-2 rounded-full shadow-[0_0_8px_rgba(34,211,238,0.5)]"
+            className="h-[2px] bg-white mx-auto mt-2 rounded-full"
           />
         </div>
 
@@ -122,21 +100,17 @@ export default function Projects() {
           {PROJECTS.map((project) => (
             <div
               key={project.id}
-              className={`p-5 sm:p-6 rounded-xl border transition-all duration-300 flex flex-col justify-between group h-full relative overflow-hidden bg-white/3 border-white/5 hover:border-cyan-500/30`}
+              className={`p-5 sm:p-6 rounded-xl border transition-all duration-300 flex flex-col justify-between group h-full relative overflow-hidden bg-[#121214]/80 border-neutral-800 hover:border-white/20`}
             >
               {/* Highlight background glowing node */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-400/5 to-transparent blur-md pointer-events-none" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/[0.02] to-transparent blur-md pointer-events-none" />
 
               <div className="space-y-3">
                 {/* Upper row: Folder & Duration */}
                 <div className="flex items-center justify-between">
                   {/* Technology indicator tag */}
-                  <div className={`p-2 rounded-lg ${getAccentBg(project.accentColor)} flex items-center justify-center`}>
-                    <BarChart3 className={`w-4 font-bold h-4 ${
-                      project.accentColor === "cyan" ? "text-cyan-400 animate-pulse" :
-                      project.accentColor === "blue" ? "text-blue-400" :
-                      project.accentColor === "purple" ? "text-purple-400" : "text-amber-400"
-                    }`} />
+                  <div className={`p-2 rounded-lg bg-white/5 flex items-center justify-center`}>
+                    <BarChart3 className="w-4 font-bold h-4 text-white" />
                   </div>
 
                   {project.duration && (
@@ -149,7 +123,7 @@ export default function Projects() {
 
                 {/* Info block */}
                 <div className="space-y-1.5 text-left">
-                  <h3 className="text-base font-display font-bold text-slate-100 group-hover:text-cyan-300 transition-colors">
+                  <h3 className="text-base font-display font-bold text-slate-100 group-hover:text-white transition-colors">
                     {project.title}
                   </h3>
                   
@@ -158,7 +132,7 @@ export default function Projects() {
                     {project.tech.map((t) => (
                       <span
                         key={t}
-                        className="px-2 py-0.5 rounded bg-[#020617] border border-white/5 text-[9px] font-mono tracking-wide text-slate-300 uppercase"
+                        className="px-2 py-0.5 rounded bg-[#161619] border border-neutral-800 text-[9px] font-mono tracking-wide text-slate-300 uppercase"
                       >
                         {t}
                       </span>
@@ -177,7 +151,7 @@ export default function Projects() {
                 {/* Action button: Interactive Preview Modal launcher */}
                 <button
                   onClick={() => setSelectedProject(project)}
-                  className="px-3.5 py-1.5 rounded-lg bg-cyan-500/10 border border-cyan-400/20 text-cyan-300 hover:text-slate-100 hover:bg-cyan-600 hover:border-transparent transition-all duration-300 flex items-center justify-center space-x-1.5 text-[11px] font-bold uppercase tracking-wide cursor-pointer flex-1 sm:flex-none"
+                  className="px-3.5 py-1.5 rounded bg-white text-[#080808] hover:bg-neutral-200 transition-all duration-300 flex items-center justify-center space-x-1.5 text-[11px] font-bold uppercase tracking-wide cursor-pointer flex-1 sm:flex-none"
                 >
                   <Eye className="w-3.5 h-3.5" />
                   <span>Interactive Preview</span>
@@ -189,7 +163,7 @@ export default function Projects() {
                     href={project.projectLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-3.5 py-1.5 rounded-lg bg-[#020617] border border-white/15 text-slate-300 hover:text-slate-150 hover:border-cyan-500/35 transition-all text-[11px] flex items-center justify-center space-x-1.5"
+                    className="px-3.5 py-1.5 rounded bg-[#161619] border border-neutral-800 text-slate-300 hover:text-white hover:border-white/30 transition-all text-[11px] flex items-center justify-center space-x-1.5"
                   >
                     <span>Analyze Document</span>
                     <ExternalLink className="w-3 h-3" />
@@ -202,18 +176,18 @@ export default function Projects() {
 
         {/* Live Dashboard Preview Modal */}
         {selectedProject && createPortal(
-          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-[#020617]/95 backdrop-blur-md">
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-[#080808]/95 backdrop-blur-md">
             
-            <div className="w-full max-w-4xl max-h-[90vh] glass-panel bg-[#020617] border border-cyan-500/30 rounded-xl overflow-hidden shadow-[0_0_40px_rgba(34,211,238,0.15)] flex flex-col">
+            <div className="w-full max-w-4xl max-h-[90vh] bg-[#121214] border border-neutral-800 rounded-xl overflow-hidden flex flex-col shadow-2xl">
               
               {/* Modal Header */}
-              <div className="p-4 bg-[#020617] border-b border-white/10 flex items-center justify-between">
+              <div className="p-4 bg-[#121214] border-b border-white/5 flex items-center justify-between">
                 <div className="flex items-center space-x-2.5">
                   <div className={`p-1.5 rounded-lg ${getAccentBg(selectedProject.accentColor)}`}>
-                    <FolderGit2 className="w-4 h-4 text-cyan-400" />
+                    <FolderGit2 className="w-4 h-4 text-white" />
                   </div>
                   <div className="text-left">
-                    <span className="font-mono text-[9px] text-cyan-400 tracking-wider block uppercase font-bold">[ BUSINESS INTELLIGENCE LAB ]</span>
+                    <span className="font-mono text-[9px] text-slate-400 tracking-wider block uppercase font-bold">[ BUSINESS INTELLIGENCE LAB ]</span>
                     <h3 className="font-display font-bold text-slate-100 text-sm sm:text-base leading-tight">
                       {selectedProject.title}
                     </h3>
@@ -222,7 +196,7 @@ export default function Projects() {
                 
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="p-1 rounded-md bg-[#020617] text-slate-400 hover:text-slate-100 hover:bg-white/5 transition-colors"
+                  className="p-1 rounded-md bg-[#121214] text-slate-400 hover:text-slate-100 hover:bg-white/5 transition-colors"
                 >
                   <X className="w-4 h-4" />
                 </button>
@@ -232,7 +206,7 @@ export default function Projects() {
               <div className="p-4 sm:p-5 overflow-y-auto space-y-5 flex-grow text-left">
                 
                 {/* Meta summary */}
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-3 bg-white/3 p-3 rounded-lg border border-white/5">
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-3 bg-[#161619] p-3 rounded-lg border border-neutral-800">
                   <div className="space-y-0.5">
                     <span className="text-[9px] uppercase font-mono text-slate-500 block font-bold">Duration</span>
                     <span className="text-xs font-mono text-slate-200">{selectedProject.duration || "Self-Paced / 2026"}</span>
@@ -245,7 +219,7 @@ export default function Projects() {
                     <span className="text-[9px] uppercase font-mono text-slate-500 block font-bold">Analysis Stack</span>
                     <div className="flex flex-wrap gap-1 mt-0.5">
                       {selectedProject.tech.map(t => (
-                        <span key={t} className="px-2 py-0.5 rounded bg-[#020617] border border-white/5 text-[9px] font-mono text-slate-300">{t}</span>
+                        <span key={t} className="px-2 py-0.5 rounded bg-[#121214] border border-neutral-800 text-[9px] font-mono text-slate-300">{t}</span>
                       ))}
                     </div>
                   </div>
@@ -254,7 +228,7 @@ export default function Projects() {
                 {/* Narrative Details */}
                 <div className="space-y-1.5">
                   <h4 className="font-display font-bold text-xs text-slate-200 flex items-center gap-1.5 uppercase tracking-wide font-mono">
-                    <Info className="w-3.5 h-3.5 text-cyan-400" /> Analytical Case Summary
+                    <Info className="w-3.5 h-3.5 text-white" /> Analytical Case Summary
                   </h4>
                   <p className="text-slate-300 text-xs font-light leading-relaxed">
                     {selectedProject.description}
@@ -264,7 +238,7 @@ export default function Projects() {
                 {/* Live Simulated / Embed Viewer Sandbox */}
                 <div className="space-y-3.5">
                   <h4 className="font-display font-bold text-xs text-slate-200 flex items-center gap-1.5 uppercase font-mono tracking-wider">
-                    <SlidersHorizontal className="w-3.5 h-3.5 text-purple-400" /> [ Interactive Analytics Sandbox ]
+                    <SlidersHorizontal className="w-3.5 h-3.5 text-white" /> [ Interactive Analytics Sandbox ]
                   </h4>
 
                   {/* Swiggy Sales Dashboard Simulator */}
@@ -760,7 +734,7 @@ export default function Projects() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-3">
                         {/* Region bar chart */}
                         <div className="bg-white border border-slate-200 rounded-xl p-3 shadow-sm">
-                          <span className="font-mono text-[8px] text-slate-400 uppercase font-bold tracking-widest block mb-1.5">// SALES DISTRIBUTION</span>
+                          <span className="font-mono text-[8px] text-slate-400 uppercase font-bold tracking-widest block mb-1.5">SALES DISTRIBUTION</span>
                           <h4 className="text-[10px] font-bold text-slate-700 mb-2">Revenue by Region</h4>
                           <div className="space-y-2">
                             {[
@@ -793,7 +767,7 @@ export default function Projects() {
                         {/* Category donut chart */}
                         <div className="bg-white border border-slate-200 rounded-xl p-3 shadow-sm flex flex-col justify-between">
                           <div>
-                            <span className="font-mono text-[8px] text-slate-400 uppercase font-bold tracking-widest block mb-1.5">// CATEGORY SNAPSHOT</span>
+                            <span className="font-mono text-[8px] text-slate-400 uppercase font-bold tracking-widest block mb-1.5">CATEGORY SNAPSHOT</span>
                             <h4 className="text-[10px] font-bold text-slate-700">Sales by Category</h4>
                           </div>
 
@@ -875,7 +849,7 @@ export default function Projects() {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-0.5">
                         {/* Segment performance table */}
                         <div className="bg-white border border-slate-200 rounded-xl p-2.5 shadow-sm">
-                          <span className="font-mono text-[7px] text-slate-400 block font-bold mb-1">// SEGMENT MATRIX</span>
+                          <span className="font-mono text-[7px] text-slate-400 block font-bold mb-1">SEGMENT MATRIX</span>
                           <span className="text-[9.5px] font-bold text-slate-700 block mb-1">Segment Performance metrics</span>
                           <div className="overflow-x-auto">
                             <table className="w-full text-left font-mono text-[8px] leading-tight select-none">
@@ -907,7 +881,7 @@ export default function Projects() {
                         {/* Profit vs Sales (by category) bar chart */}
                         <div className="bg-white border border-slate-200 rounded-xl p-2.5 shadow-sm flex flex-col justify-between">
                           <div>
-                            <span className="font-mono text-[7px] text-slate-400 block font-bold mb-1">// COMPARATIVE ANALYSIS</span>
+                            <span className="font-mono text-[7px] text-slate-400 block font-bold mb-1">COMPARATIVE ANALYSIS</span>
                             <span className="text-[9.5px] font-bold text-slate-700 block">Profit vs Sales (by Category)</span>
                           </div>
                           
@@ -1005,7 +979,7 @@ export default function Projects() {
                           {/* Background shadow glow */}
                           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-red-600/10 blur-[40px] rounded-full pointer-events-none" />
                           
-                          <span className="font-mono text-[9px] text-slate-400 uppercase tracking-widest block font-medium">// BRAND CLASSIFICATION</span>
+                          <span className="font-mono text-[9px] text-slate-400 uppercase tracking-widest block font-medium">BRAND CLASSIFICATION</span>
                           
                           <div className="my-2 select-none">
                             <h1 className="text-3xl font-display font-black text-red-600 tracking-wider drop-shadow-[0_0_15px_rgba(220,38,38,0.7)] hover:scale-105 transition-transform duration-300">
@@ -1181,7 +1155,7 @@ export default function Projects() {
 
               {/* Modal Actions Footer */}
               <div className="p-3 bg-[#020617] border-t border-white/10 flex items-center justify-between">
-                <span className="font-mono text-[9px] text-[#8b5cf6] uppercase tracking-widest block">// SECURED VIA PORTFOLIO CORE</span>
+                <span className="font-mono text-[9px] text-[#8b5cf6] uppercase tracking-widest block">SECURED VIA PORTFOLIO CORE</span>
                 <button
                   onClick={() => setSelectedProject(null)}
                   className="px-4 py-1.5 rounded bg-[#020617] border border-white/10 text-slate-300 hover:text-slate-100 transition-colors text-[11px] font-bold"
