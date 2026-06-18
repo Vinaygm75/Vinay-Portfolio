@@ -147,10 +147,13 @@
 }
 
 .cyber-grid {
-  background-size: 32px 32px;
+  background-size: 48px 48px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.01) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at 50% 40%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.15) 75%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at 50% 40%, rgba(0,0,0,1) 20%, rgba(0,0,0,0.15) 75%, transparent 100%);
 }
 
 .neon-border-blue {

@@ -15,7 +15,7 @@ export const PERSONAL_INFO = {
   description: "I'm a passionate and detail-oriented Data Analyst with hands-on experience in SQL, Power BI, Excel, and Data Visualization. I enjoy transforming complex datasets into meaningful insights that drive business decisions and improve organizational performance.",
   aboutText: "Aspiring Data Analyst with hands-on experience in SQL, Excel, Power BI, and Data Visualization. Skilled in transforming raw data into meaningful insights through data cleaning, analysis, and interactive dashboard development. Passionate about solving business problems using data-driven decision-making and continuously enhancing analytical and technical skills. Seeking opportunities to contribute to organizational growth through actionable insights and effective reporting.",
   profilePhoto: "https://images.weserv.nl/?url=https://i.ibb.co/s7xjz8W/vinay.jpg",
-  resumeUrl: "https://www.image2url.com/r2/default/documents/1781516825570-69800a29-085f-4fce-b3af-f9839a9aa0f5.pdf",
+  resumeUrl: "https://www.image2url.com/r2/default/documents/1781769769238-9b434fa3-02ef-45f8-a871-86b7e1661ba9.pdf",
   email: "gmvinay102@gmail.com",
   location: "Bengaluru, Karnataka, India",
   socials: {
